@@ -1,0 +1,346 @@
+/* Scottish SSDI Customisations */
+
+// standard colours
+@blue: #0065bd;
+@grey: #333e48;
+@background: #f6fdff;
+@blue-active: lighten(@blue, 10%);
+
+
+.iti-am, .iti-24, .iti-au, .iti-4, .iti-hh, .iti-18, .iti-lu, .iti-17, .iti-pd, .iti-23, .iti-su, .iti-14 {
+	background-color: transparent;
+}
+
+body {
+	background-color: @background;
+}
+
+.gn-logo {
+    max-height: 40px;
+}
+
+.navbar-nav > li:first-child > a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.navbar-nav.navbar-right > li:first-child > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-nav > li:first-child > a > img {
+    margin-right: 8px;
+    border: 2px solid #fff;
+}
+
+.navbar-nav > li:first-child > a > span {
+    position: absolute;
+    top: -100000px;
+    left: -100000px;
+}
+
+@media (max-width: 768px) {
+    .gn-top-bar li:first-child span {
+        display: none !important;
+    }
+    .gn-top-bar span.visible-lg {
+        display: inline-block !important;
+        margin-left: 16px
+    }
+}
+
+.navbar-default .navbar-nav > li.dropdown > .dropdown-menu {
+	display: none;
+}
+
+.navbar-default .navbar-nav > li.dropdown.open {
+	height: auto;
+}
+
+.navbar-default .navbar-nav > li.dropdown.open > .dropdown-toggle {
+    background-color: @blue-active;
+}
+
+.navbar-default .navbar-nav > li.dropdown.open > .dropdown-menu > li > a {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > li.dropdown.open > .dropdown-menu {
+	display: block;
+}
+
+#navbar {
+	border-color: @grey;
+}
+
+.navbar-default {
+	background-color: @blue;
+	border-color: @grey;
+}
+
+.navbar-default .navbar-nav li {
+	height: 53px;
+}
+
+.navbar-default .navbar-nav li a {
+	color: #fff;
+}
+
+.navbar-default .navbar-nav li.active {
+	background-color: @blue-active;
+}
+
+.navbar-default .navbar-nav li:hover,
+.navbar-default .navbar-nav li:focus {
+	background-color: @blue-active;
+}
+
+.navbar-default .navbar-nav li:hover a:hover,
+.navbar-default .navbar-nav li:focus a:focus {
+	background-color: @blue-active;
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #fff;
+	background-color: @blue-active;
+}
+
+.gn-search-page {
+	.cookie-warning {
+		width: 90%;
+		border: 1px solid @blue;
+		margin: 16px auto;
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		.ng-scope {
+			font-weight: normal;
+		}
+
+		p:last-child {
+			.ng-scope:first-child,
+			.ng-scope:last-child {
+				font-weight: bold;
+			}
+
+			.ng-scope:first-child:hover,
+			.ng-scope:last-child:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.badge-result-inspire {
+	background-color: transparent;
+}
+
+.nav-tabs {
+	border-bottom-color: @grey;
+}
+
+.nav-tabs > li {
+    background-color:  @blue;
+	border: 1px solid @blue;
+	border-radius: 4px 4px 0 0;
+	margin-right: 8px;
+}
+
+.nav-tabs > li:first-child {
+    margin-left: 16px;
+}
+
+.nav-tabs > li > a,
+.nav-tabs > li > a:hover, 
+.nav-tabs > li > a:focus {
+	background-color: @blue;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+}
+
+.nav-tabs > li > a:hover, 
+.nav-tabs > li > a:focus {
+	background-color: @blue-active;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus {
+	background-color: @blue-active;
+	border: 0;
+	color: #fff;
+}
+
+.quickresultcard {
+	border-color: @grey;
+}
+
+.quickresultcard .front .top {
+	background-color: @grey;
+}
+
+.list-group-item {
+    background-color: transparent;
+}
+
+.gn-facet h4 {
+	border-bottom: 1px dotted @grey;
+}
+
+.gn-facet .list-group {
+	border-left-color: @grey;
+}
+
+ul.gn-resultview li.gn-grid {
+    border-color: @grey;
+    background-color: #fff;
+}
+
+.navbar-nav.navbar-right > li:first-child > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.scottish-logo {
+    width: 220px;
+    padding-left: 13px;
+}
+
+.scottish-logo > a > span {
+    display: none;
+}
+
+.scottish-logo > a {
+    background: #fff url(/geonetwork/catalog/views/default/images/govscot-linear.png) no-repeat scroll 0 0;
+    height: 40px;
+    width: 190px;
+    background-color: #fff;
+    padding: 4px;
+    margin-top: 4px;
+}
+
+.navbar-default .navbar-nav > li.scottish-logo > a:hover, 
+.navbar-default .navbar-nav > li.scottish-logo > a:focus {
+    background-color: #fff
+}
+
+@media (max-width: 768px) {
+	.navbar-default .navbar-nav li {
+		height: auto;
+	}
+
+	.navbar-default .navbar-nav > li.dropdown > .dropdown-menu {
+		display: none;
+	}
+
+	.navbar-default .navbar-nav > li.dropdown.open {
+		height: auto;
+	}
+
+	.navbar-default .navbar-nav > li.dropdown.open > a {
+		color: #fff;
+	}
+
+	.navbar-default .navbar-nav > li.dropdown.open > .dropdown-menu {
+		display:block;
+	}
+
+	.navbar-default .navbar-form.navbar-right .pull-right {
+		float: none !important;
+	}
+/*
+	.navbar-default .navbar-nav.navbar-right li:nth-child(1) {
+		display: block;
+	}
+
+	.navbar-default .navbar-nav.navbar-right li:nth-child(2) {
+		display: none;
+	}
+
+
+	.navbar-default .navbar-nav.navbar-right li.authenticated:nth-child(1) {
+		display: none;
+	}
+
+	.navbar-default .navbar-nav.navbar-right li.authenticated:nth-child(2) {
+		display: block;
+	}*/
+}
+
+#info-tabset li {
+    margin-left: 0;
+}
+
+/* fix for IE11 scrollbar */
+div.container-fluid div.row div.col-xs-12 {
+	overflow-x: hidden;
+}
+
+/* fix for footer overlapping facet search */
+.gn-search-facet {
+    margin-bottom: 16px;
+}
+
+/* change projection styling */
+#projection {
+	padding: 16px;
+}
+
+#projection::before {
+	content: "Select projection";
+}
+
+#projection select {
+	width: 100%;
+}
+
+/* fix for contribute menu background */
+.navbar-default .navbar-nav > li.open.dropdown > .dropdown-menu {
+	background-color: @blue;
+}
+
+.navbar-default .navbar-nav > li.open.dropdown > .dropdown-menu li:hover {
+	background-color: @blue-active;
+}
+
+/* hide big info block (currently un-hidden)
+.well {
+    display: none;
+} */
+
+/* make big info block transparent */
+.well {
+    border: none;
+    background-color: transparent;
+    box-shadow: none; 
+    -webkit-box-shadow: none;
+}
+
+/* fix projection switcher issue (IE only) */
+.force-hide.panel {
+    position: absolute;
+    top: -100000px;
+    left: -100000px;
+}
+
+/* Temporarily hide placename search till bug 1470 is fixed */
+.search-container {
+    display: none;
+}
