@@ -83,6 +83,7 @@
     "conceptNarrower": " is more specific than ",
     "conceptRelated": " is related to ",
     "linkToServiceWithoutURLError": "No WMS URL found in that service. Choose a service with a WMS URL to be able to choose a layer.",
+    "linkToServiceWithoutURLError-morethanonelink": "More than one WMS URL found in that service. Choose a service with only one WMS URL to be able to choose a layer.",
     "linkToServiceError": "An error occurred when linking the dataset with the service",
     "chooseAProj": "Select the projection to use to display coordinates (note: coordinates are always saved in the metadata record in WGS84).",
     "chooseAType": "Choose a type",
