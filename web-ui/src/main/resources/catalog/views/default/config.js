@@ -142,7 +142,7 @@
           title: 'ADS OS Premium Mercator',
           visible: true,
           source: new ol.source.XYZ({
-            url: "http://t0.ads.astuntechnology.com/astuntechnology/ospremium/tiles/ospremiumwebmerc_EPSG3857/{z}/{x}/{y}.png"
+            url: "http://t0.ads.astuntechnology.com/spatialdata-gov-scot/ospremium/tiles/ospremiumwebmerc_EPSG3857/{z}/{x}/{y}.png"
           })
         });
         oLayer3857ADSPremium.displayInLayerManager = false;
@@ -154,7 +154,7 @@
           title: 'ADS OS Premium Greyscale Mercator',
           visible: false,
           source: new ol.source.XYZ({
-            url: "http://t0.ads.astuntechnology.com/astuntechnology/ospremium/tiles/ospremiumbwwebmerc_EPSG3857/{z}/{x}/{y}.png"
+            url: "http://t0.ads.astuntechnology.com/spatialdata-gov-scot/ospremium/tiles/ospremiumbwwebmerc_EPSG3857/{z}/{x}/{y}.png"
           })
         });
         oLayer3857ADSPremiumGrey.displayInLayerManager = false;
@@ -167,7 +167,7 @@
           title: 'ADS OS Premium',
           visible: true,
           source: new ol.source.TileWMS({
-            url: 'http://t0.ads.astuntechnology.com/astuntechnology/ospremium/service?',
+            url: 'http://t0.ads.astuntechnology.com/spatialdata-gov-scot/ospremium/service?',
             attributions: [
               new ol.Attribution({html: 'Astun Data Service &copy; Ordnance Survey.'})
             ],
@@ -189,7 +189,7 @@
           title: 'ADS OS Premium (Greyscale)',
           visible: false,
           source: new ol.source.TileWMS({
-            url: 'http://t0.ads.astuntechnology.com/astuntechnology/ospremium/service?',
+            url: 'http://t0.ads.astuntechnology.com/spatialdata-gov-scot/ospremium/service?',
             attributions: [
               new ol.Attribution({html: 'Astun Data Service &copy; Ordnance Survey.'})
             ],
