@@ -429,6 +429,22 @@
           });
 
           projControl.addProjection(bngProj,'OSGB National Grid');
+          
+          EPSG27700PROJECTIONS = [
+            bngProj,
+            new ol.proj.Projection({
+              code : 'http://www.opengis.net/gml/srs/epsg.xml#27700',
+              extent : bng.getExtent(),
+              worldExtent : bng.getWorldExtent()
+            }),
+            new ol.proj.Projection({
+              code : 'urn:x-ogc:def:crs:EPSG:27700',
+              extent : bng.getExtent(),
+              worldExtent : bng.getWorldExtent()
+            })
+          ];
+
+          ol.proj.addEquivalentProjections(EPSG27700PROJECTIONS);
 
           // var erts = ol.proj.get('EPSG:4258');
           // var ertsProj = new ol.proj.Projection({
