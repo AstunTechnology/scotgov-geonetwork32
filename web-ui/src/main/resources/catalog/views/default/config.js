@@ -441,6 +441,11 @@
               code : 'urn:x-ogc:def:crs:EPSG:27700',
               extent : bng.getExtent(),
               worldExtent : bng.getWorldExtent()
+            }),
+            new ol.proj.Projection({
+              code : 'urn:ogc:def:crs:EPSG:6.9:27700',
+              extent : bng.getExtent(),
+              worldExtent : bng.getWorldExtent()
             })
           ];
 
