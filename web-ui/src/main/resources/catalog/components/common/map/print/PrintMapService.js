@@ -264,6 +264,31 @@
           });
           return enc;
         },
+        'XYZ': function(layer, config) {
+          var enc = self.encoders.
+              layers['Layer'].call(this, layer);
+          var url = layer.getSource().getUrls()[0];
+          //Remove the XYZ and extension parts of the URL
+          if(url.indexOf("{z}") > 0) {
+            url = url.substring(0, url.indexOf("{z}"));
+            //Remove last "/"
+            url = url.substring(0, url.lastIndexOf("/"));
+          }
+          angular.extend(enc, {
+            type: 'XYZ',
+            extension: 'png',
+            baseURL: url,
+            // Hack to return an extent for the base
+            // layer in case of undefined
+            maxExtent: layer.getExtent() ||
+                [-20037508.34, -20037508.34, 20037508.34, 20037508.34],
+            resolutions: layer.getSource().getTileGrid().getResolutions(),
+            tileSize: [
+              layer.getSource().getTileGrid().getTileSize(),
+              layer.getSource().getTileGrid().getTileSize()]
+          });
+          return enc;
+        },
         'Bing': function(layer, config) {
           var enc = self.encoders.
               layers['Layer'].call(this, layer);

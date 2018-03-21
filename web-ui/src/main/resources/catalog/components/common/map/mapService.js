@@ -1023,10 +1023,9 @@
             var defer = $q.defer();
             var $this = this;
             
-            if(getCapLayer.useProxy 
-                && urlGetFeature.indexOf(gnGlobalSettings.proxyUrl) != 0) {
-              urlGetFeature = gnGlobalSettings.proxyUrl 
-                                  + encodeURIComponent(urlGetFeature);
+            if(url.indexOf(gnGlobalSettings.proxyUrl) != 0) {
+              url = gnGlobalSettings.proxyUrl 
+                                  + encodeURIComponent(url);
             }
 
             if (!isLayerInMap(map, name, url)) {
