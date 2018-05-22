@@ -38,7 +38,7 @@
     "add": "Add",
     "address": "Address",
     "gnToggle": "Show/hide sections",
-    "cookieWarning": "This webpage uses cookies. If you continue navigating this page, we will assume you accept this.",
+    "cookieWarning": "This webpage uses cookies. Click below to accept and hide this message or <a _target='blank' href='https://cookies.insites.com/'>change your cookie settings</a>. See our <a _target='blank' href='https://scottish-sdi-metadata-portal.readthedocs.io/en/latest/privacy.html'>privacy policy</a> to find out more about how cookies are used on this site.",
     "moreOnCookie": "Want to know more about this message ?",
     "acceptCookie": "Accept",
     "rejectCookie": "Get me out of here",
