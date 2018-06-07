@@ -396,6 +396,7 @@
   "wfsDownloadDataInstruction": "Choose a data format to download:",
   "wfsTypenameNotAvailable": "The featuretype '{{typename}}' is not available in the WFS service. You can select from available featuretypes instead",
   "wfsChooseFeatureTypeToDownload": "Choose a featuretype to download",
+  "Unable_to_connect_to_service": "Couldn't find a WFS service associated to this layer",
   "welcomeTitle":"",
   "getstarted": "Access to Scotland's Spatial Data",
   "ChangeProjection": "Change Projection",
