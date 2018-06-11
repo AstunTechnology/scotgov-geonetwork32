@@ -241,7 +241,7 @@
             baseURL: config.wmsUrl || url,
             layers: layers,
             styles: styles,
-            legend: layer.get('legend'),
+            legend: (layer.get('legend') ? layer.get('legend').replace(/ /g, '%20') : null),
             format: 'image/' + (config.format || 'png'),
             customParams: {
               'EXCEPTIONS': 'XML',
@@ -377,7 +377,7 @@
             name: layer.get('title') || layer.get('label'),
             classes: [{
               name: '',
-              icon: layer.get('legend')
+              icon: (layer.get('legend') ? layer.get('legend').replace(/ /g, '%20') : null)
             }]
           };
         }
