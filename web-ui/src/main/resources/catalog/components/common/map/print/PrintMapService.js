@@ -159,6 +159,7 @@
           var encFeatures = [];
           var stylesDict = {};
           var styleId = 0;
+          var defaultStyle = layer.getStyleFunction();
 
           angular.forEach(features, function(feature) {
             var encStyle = {
@@ -175,8 +176,14 @@
             else if (featureStyle) {
               styles = [featureStyle];
             }
-            else {
+            else if (ol.style.defaultStyleFunction) {
               styles = ol.style.defaultStyleFunction(feature);
+            } 
+            else if (feature.getStyleFunction()){
+              styles = feature.getStyleFunction();
+            }
+            else {
+              styles = defaultStyle();
             }
 
             var geometry = feature.getGeometry();
