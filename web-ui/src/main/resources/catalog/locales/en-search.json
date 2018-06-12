@@ -402,5 +402,7 @@
   "ChangeProjection": "Change Projection",
   "backTohome": "Back to Home",
   "print_legend_field": "Print Legend",
-  "learnTheApi": "API"
+  "learnTheApi": "API",
+  "wfsGetCapabilitiesFailed":"Parsing of WFS GetCapabilities failed.",
+  "errorRemoteServer":"Error trying to reach the remote server. Layer could not be added."
 }

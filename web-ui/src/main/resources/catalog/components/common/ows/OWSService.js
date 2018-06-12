@@ -69,9 +69,11 @@
 
 
   module.provider('gnOwsCapabilities', function() {
-    this.$get = ['$http', '$q',
+    this.$get = ['$http', '$q', 
       'gnUrlUtils', 'gnGlobalSettings', 'gnAlertService',
-      function($http, $q, gnUrlUtils, gnGlobalSettings, gnAlertService) {
+      '$translate',
+      function($http, $q, gnUrlUtils, gnGlobalSettings, 
+          gnAlertService, $translate) {
 
       //Some services don't work with all languages  
       //FIXME this is ugly, but how do we know which services break?
@@ -234,7 +236,7 @@
                     .error(function(data, status) {
 
                       gnAlertService.addAlert({
-                                   msg: 'Error trying to reach the remote server. Layer could not be added.',
+                                   msg: $translate.instant('errorRemoteServer'),
                                    type: 'danger'
                                  }, 30000);
                       defer.reject(status);
@@ -268,7 +270,7 @@
                     .error(function(data, status, headers, config) {
 
                       gnAlertService.addAlert({
-                                   msg: 'Error trying to reach the remote server. Layer could not be added.',
+                                   msg: $translate.instant('errorRemoteServer'),
                                    type: 'danger'
                                  }, 30000);
                       defer.reject(status);
@@ -299,6 +301,10 @@
                   if (!xfsCap || xfsCap.exception != undefined) {
                     defer.reject({msg: 'wfsGetCapabilitiesFailed',
                       owsExceptionReport: xfsCap});
+                    gnAlertService.addAlert({
+                      msg: $translate.instant('wfsGetCapabilitiesFailed'),
+                      type: 'danger'
+                    }, 30000);
                   } else {
                      defer.resolve(xfsCap);
                   }
@@ -307,7 +313,7 @@
                 .error(function(data, status, headers, config) {
 
                   gnAlertService.addAlert({
-                               msg: 'Error trying to reach the remote server. Layer could not be added.',
+                               msg: $translate.instant('errorRemoteServer'),
                                type: 'danger'
                              }, 30000);
                   defer.reject(status);
