@@ -236,7 +236,7 @@
                     .error(function(data, status) {
 
                       gnAlertService.addAlert({
-                                   msg: $translate.instant('errorRemoteServer'),
+                                   msg: $translate.instant('errorRemoteServer') + url,
                                    type: 'danger'
                                  }, 30000);
                       defer.reject(status);
@@ -270,7 +270,7 @@
                     .error(function(data, status, headers, config) {
 
                       gnAlertService.addAlert({
-                                   msg: $translate.instant('errorRemoteServer'),
+                                   msg: $translate.instant('errorRemoteServer') + url,
                                    type: 'danger'
                                  }, 30000);
                       defer.reject(status);
@@ -313,7 +313,7 @@
                 .error(function(data, status, headers, config) {
 
                   gnAlertService.addAlert({
-                               msg: $translate.instant('errorRemoteServer'),
+                               msg: $translate.instant('errorRemoteServer') + url,
                                type: 'danger'
                              }, 30000);
                   defer.reject(status);

@@ -404,5 +404,5 @@
   "print_legend_field": "Print Legend",
   "learnTheApi": "API",
   "wfsGetCapabilitiesFailed":"Parsing of WFS GetCapabilities failed.",
-  "errorRemoteServer":"Error trying to reach the remote server. Layer could not be added."
+  "errorRemoteServer":"Error trying to reach the remote server: "
 }

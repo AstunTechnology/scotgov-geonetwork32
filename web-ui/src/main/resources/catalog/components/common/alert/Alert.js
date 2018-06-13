@@ -42,7 +42,9 @@
         }
 
         $timeout(function() {
-          gnAlertValue.splice(0, 1);
+          if(gnAlertValue.indexOf(alert) >= 0) {
+            gnAlertValue.splice(gnAlertValue.indexOf(alert), 1);           
+          }
         }, delay);
       };
     }]);
