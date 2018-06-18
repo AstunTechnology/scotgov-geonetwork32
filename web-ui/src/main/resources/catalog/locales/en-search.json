@@ -396,13 +396,13 @@
   "wfsDownloadDataInstruction": "Choose a data format to download:",
   "wfsTypenameNotAvailable": "The featuretype '{{typename}}' is not available in the WFS service. You can select from available featuretypes instead",
   "wfsChooseFeatureTypeToDownload": "Choose a featuretype to download",
-  "Unable_to_connect_to_service": "Couldn't find a WFS service associated to this layer",
+  "Unable_to_connect_to_service": "Couldn't find a download service associated with this layer",
   "welcomeTitle":"",
   "getstarted": "Access to Scotland's Spatial Data",
   "ChangeProjection": "Change Projection",
   "backTohome": "Back to Home",
   "print_legend_field": "Print Legend",
   "learnTheApi": "API",
-  "wfsGetCapabilitiesFailed":"Parsing of WFS GetCapabilities failed.",
+  "wfsGetCapabilitiesFailed":"Parsing of WFS GetCapabilities failed. Either there is no download service configured, or a problem with the service",
   "errorRemoteServer":"Error trying to reach the remote server: "
 }
