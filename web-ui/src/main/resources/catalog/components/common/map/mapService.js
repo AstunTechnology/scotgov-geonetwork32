@@ -818,20 +818,22 @@
                 }
               }
 
-              var vectorFormat = new ol.format.WFS();
-
-              if (getCapLayer.outputFormats) {
-                $.each(getCapLayer.outputFormats.format,
-                    function(f, output) {
-                      if (output.indexOf('json') > 0 ||
-                         output.indexOf('JSON') > 0) {
-                        vectorFormat = ol.format.JSONFeature(
-                           {srsName_: getCapLayer.defaultSRS});
-                      }
-                    });
-              }
-
-              //TODO different strategy depending on the format
+              var vectorFormat = null;
+                         
+                        if(getCapLayer.version == '1.0.0') {
+                        vectorFormat = new ol.format.WFS( 
+                              {
+                                  gmlFormat : new ol.format.GML2({
+                                      featureNS: getCapLayer.name.prefix,
+                                      featureType: getCapLayer.name.localPart,
+                                      srsName: map.getView().getProjection().getCode()
+                                    }) 
+                                }
+                             );
+                            } else {
+                                //Default format
+                                var vectorFormat = new ol.format.WFS();
+                            }
 
               var vectorSource = new ol.source.Vector({
                 format: vectorFormat,
@@ -848,11 +850,23 @@
                       gnUrlUtils.toKeyValue({
                         service: 'WFS',
                         request: 'GetFeature',
-                        version: '1.1.0',
+                        version: getCapLayer.version,
                         srsName: map.getView().getProjection().getCode(),
                         bbox: extent.join(','),
                         typename: getCapLayer.name.prefix + ':' +
                                    getCapLayer.name.localPart}));
+
+                  //Fix, ArcGIS fails if there is a bbox:
+                  if(getCapLayer.version == '1.1.0') {
+                    urlGetFeature = gnUrlUtils.append(parts[0],
+                        gnUrlUtils.toKeyValue({
+                          service: 'WFS',
+                          request: 'GetFeature',
+                          version: getCapLayer.version,
+                          srsName: map.getView().getProjection().getCode(),
+                          typename: getCapLayer.name.prefix + ':' +
+                                     getCapLayer.name.localPart}));
+                  }
                   
 
                   
@@ -867,22 +881,8 @@
                     url: urlGetFeature
                   })
                       .done(function(response) {
-                        // TODO: Check WFS exception
                         vectorSource.addFeatures(vectorFormat.
                             readFeatures(response));
-
-                        var extent = ol.extent.createEmpty();
-                        var features = vectorSource.getFeatures();
-                        for (var i = 0; i < features.length; ++i) {
-                          var feature = features[i];
-                          var geometry = feature.getGeometry();
-                          if (!goog.isNull(geometry)) {
-                            ol.extent.extend(extent, geometry.getExtent());
-                          }
-                        }
-
-                        map.getView().fit(extent, map.getSize());
-
                       })
                       .then(function() {
                         this.loadingLayer = false;
