@@ -2,6 +2,9 @@
   <div class="alert" role="alert" data-ng-class="'alert-' + a.type"
        data-ng-repeat="a in alerts">
     <span data-ng-bind-html="a.msg"></span>
-    <button style="width:100%" data-translate="" data-ng-click="alerts.splice(alerts.indexOf(a), 1)">accept</button>
+    <button style="background-color:red;border-color:red" type="submit" class="btn btn-primary"
+     data-ng-click="alerts.splice(alerts.indexOf(a), 1)">
+        <span data-translate="" class="ng-scope">accept</span>
+      </button>
   </div>
 </div>
