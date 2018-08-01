@@ -23,11 +23,13 @@
 
 (function() {
   goog.provide('gn_printmap_service');
+  
+  goog.require('gn_alert');
 
-  var module = angular.module('gn_printmap_service', []);
+  var module = angular.module('gn_printmap_service', ['gn_alert']);
 
-  module.service('gnPrint', function() {
-
+  module.service('gnPrint', ['gnAlertService', '$translate',
+      function(gnAlertService, $translate) {
     var self = this;
 
     var options = {
@@ -236,6 +238,16 @@
           var url = layer.getSource() instanceof ol.source.ImageWMS ?
               layer.getSource().getUrl() :
               layer.getSource().getUrls()[0];
+              
+          $.each(layers, function(index, layer) {
+            if(layer.indexOf(" ") >= 0) {
+              gnAlertService.addAlert({
+                           msg: $translate.instant('whitespaceLayerName') + layer,
+                           type: 'danger'
+                         }, 30000);
+            }
+          });
+
           angular.extend(enc, {
             type: 'WMS',
             baseURL: config.wmsUrl || url,
@@ -527,5 +539,5 @@
       return literal;
     };
 
-  });
+  }]);
 })();
