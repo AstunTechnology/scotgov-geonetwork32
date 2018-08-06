@@ -404,5 +404,6 @@
   "print_legend_field": "Print Legend",
   "learnTheApi": "API",
   "wfsGetCapabilitiesFailed":"Parsing of WFS GetCapabilities failed. Either there is no download service configured, or a problem with the service",
-  "errorRemoteServer":"Error trying to reach the remote server: "
+  "errorRemoteServer":"Error trying to reach the remote server: ",
+  "whitespaceLayerName":"Some layers have whitespaces in the name and may not be displayed properly. Detected this error in layer "
 }
