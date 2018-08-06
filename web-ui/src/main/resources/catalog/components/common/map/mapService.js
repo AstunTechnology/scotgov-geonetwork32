@@ -663,7 +663,7 @@
                 layerParam.VERSION = getCapLayer.version;
               }
               
-              url = url || getCapLayer.url;
+              url = getCapLayer.url || url;
               if(getCapLayer.useProxy 
                   && url.indexOf(gnGlobalSettings.proxyUrl) != 0) {
                 url = gnGlobalSettings.proxyUrl + encodeURIComponent(url);
